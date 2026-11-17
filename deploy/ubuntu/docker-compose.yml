@@ -1,0 +1,7 @@
+services:
+  web:
+    image: YOUR_DOCKERHUB_USERNAME/se-lab-web:latest
+    container_name: se-lab-web
+    ports:
+      - "8080:8080"
+    restart: unless-stopped

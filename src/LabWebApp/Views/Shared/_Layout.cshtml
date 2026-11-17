@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - Software Engineering Labs</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="/">SE Labs</a>
+        <nav aria-label="Primary navigation">
+            <a href="/">Overview</a>
+            <a href="/login">Login test</a>
+            <a href="/health">Health</a>
+        </nav>
+    </header>
+    <main>@RenderBody()</main>
+    <footer>Lab 9 Software Testing and Lab 10 Software Deployment</footer>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

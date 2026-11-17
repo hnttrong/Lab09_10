@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Overview";
+}
+<section class="hero">
+    <div>
+        <p class="eyebrow">SOFTWARE ENGINEERING LABS</p>
+        <h1>Test with confidence<br />deploy with consistency</h1>
+        <p class="lead">A compact ASP.NET Core MVC application prepared for unit testing, browser automation, Docker, and continuous integration.</p>
+        <div class="actions">
+            <a class="button primary" href="/login">Open login test</a>
+            <a class="button secondary" href="/health">Check service health</a>
+        </div>
+    </div>
+    <div class="terminal" aria-label="Deployment summary">
+        <div class="terminal-bar"><span></span><span></span><span></span></div>
+        <pre><code>$ dotnet test
+Passed! 42 tests
+
+$ docker compose up -d
+Container lab-web-app  Started
+
+$ curl /health
+{"status":"healthy"}</code></pre>
+    </div>
+</section>
+<section class="feature-grid">
+    <article><span>01</span><h2>Unit testing</h2><p>EP and BVA cases cover arithmetic and bank-account rules, including CSV-driven data.</p></article>
+    <article><span>02</span><h2>Automation</h2><p>A Selenium suite validates successful and rejected credentials in a headless browser.</p></article>
+    <article><span>03</span><h2>Deployment</h2><p>A multi-stage Docker image and CI workflow provide a reproducible release path.</p></article>
+</section>

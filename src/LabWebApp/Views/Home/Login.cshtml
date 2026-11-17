@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Login test";
+}
+<section class="login-shell">
+    <div class="login-copy">
+        <p class="eyebrow">SELENIUM TEST TARGET</p>
+        <h1>Sign in to the lab portal</h1>
+        <p>Use one of the CSV credentials. The page exposes stable element IDs for repeatable browser automation.</p>
+        <p class="hint"><strong>Demo:</strong> user1 / password1</p>
+    </div>
+    <form id="loginForm" class="login-card" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" required />
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+        <button id="loginButton" type="submit">Sign in</button>
+        <p id="loginResult" class="result" role="status" aria-live="polite"></p>
+    </form>
+</section>
+@section Scripts {
+<script>
+    const allowed = new Map([
+        ["user1", "password1"],
+        ["user2", "password2"],
+        ["user3", "password3"]
+    ]);
+    document.getElementById("loginForm").addEventListener("submit", event => {
+        event.preventDefault();
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+        const result = document.getElementById("loginResult");
+        const valid = allowed.get(username) === password;
+        result.textContent = valid ? `Login successful. Welcome ${username}.` : "Login failed. Check your credentials.";
+        result.dataset.status = valid ? "success" : "error";
+    });
+</script>
+}
